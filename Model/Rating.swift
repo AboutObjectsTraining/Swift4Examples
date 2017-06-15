@@ -6,6 +6,6 @@
 import Foundation
 
 struct Rating: Codable {
-    var average: Int
+    var average: Double
     var count: Int
 }
