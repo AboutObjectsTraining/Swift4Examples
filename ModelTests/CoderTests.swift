@@ -47,15 +47,8 @@ private let authorAndBooksJson = """
 """
 
 class CoderTests: XCTestCase {
-    
-    override func setUp() {
-        print()
-        super.setUp()
-    }
-    override func tearDown() {
-        print()
-        super.tearDown()
-    }
+    override func setUp() { super.setUp(); print() }
+    override func tearDown() { print(); super.tearDown() }
     
     func testEncodeAndDecodeBook() throws {
         let data = try encoder.encode(book1)
@@ -96,6 +89,31 @@ class CoderTests: XCTestCase {
         let newAuthor = try decoder.decode(Author.self, from: data)
         print(newAuthor)
     }
+    
+    
+    var authorUrl: URL {
+        var url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        url.appendPathComponent("Authors")
+        url.appendPathExtension("json")
+        return url
+    }
+    
+    func testStoreAuthorAndNestedBook() throws {
+        let authorData = try encoder.encode(author)
+        print(String(data: authorData, encoding: .utf8)!)
+        
+        do {
+            try authorData.write(to: authorUrl)
+        }
+        catch let e {
+            print(e)
+            XCTFail()
+        }
+        
+        let fetchedData = try Data(contentsOf: authorUrl, options: [])
+        let fetchedAuthor = try decoder.decode(Author.self, from: fetchedData)
+        print(fetchedAuthor)
+    }
 }
 
 // MARK: - Custom Coding
@@ -131,6 +149,17 @@ extension CoderTests {
     func testCustomEncodeEbook() throws {
         let data = try encoder.encode(ebook)
         print(String(data: data, encoding: .utf8) ?? "null")
+    }
+    
+    func testDecodeEbookFromJsonFile() throws {
+        let bundle = Bundle(for: type(of: self))
+        guard let url = bundle.url(forResource: "ebook", withExtension: "json") else {
+            XCTFail("Unable to find JSON file in directory \(bundle.bundlePath)"); return
+        }
+        
+        let data = try Data(contentsOf: url, options:[])
+        let newEbook = try decoder.decode(Ebook.self, from: data)
+        print(newEbook)
     }
 }
 

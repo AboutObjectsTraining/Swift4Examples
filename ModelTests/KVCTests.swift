@@ -7,13 +7,8 @@ import XCTest
 @testable import Model
 
 class KVCTests: XCTestCase {
-    
-    override func setUp() {
-        super.setUp()
-    }
-    override func tearDown() {
-        super.tearDown()
-    }
+    override func setUp() { super.setUp(); print() }
+    override func tearDown() { print(); super.tearDown() }
     
     func testKVCValues() throws {
         var book = book1
