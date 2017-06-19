@@ -2,8 +2,6 @@
 <a href="https://www.aboutobjects.com"><img src="ao-logo.png" height=18 style="height: 18px;"/></a>
 </div>
 
-___
-
 #  Swift 4 Examples
 
 Explores a number of new capabilities in Swift 4, including:
