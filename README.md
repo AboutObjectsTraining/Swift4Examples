@@ -1,5 +1,5 @@
 <div>
-<a href="https://www.aboutobjects.com"><img src="ao-logo.png" style="height: 22px;"/></a>
+<a href="https://www.aboutobjects.com"><img src="ao-logo.png" height=18 style="height: 18px;"/></a>
 </div>
 
 ___
