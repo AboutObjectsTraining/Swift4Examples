@@ -34,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B40F942A1EF86AFB001032BF /* ao-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ao-logo.png"; sourceTree = "<group>"; };
 		B47EF2811EF2B1B000270F23 /* Model.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Model.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B47EF2831EF2B1B000270F23 /* Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
 		B47EF2841EF2B1B000270F23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -78,6 +79,7 @@
 			children = (
 				B4EBC8EE1EF2C373004725A8 /* LICENSE */,
 				B4EBC8ED1EF2C141004725A8 /* README.md */,
+				B40F942A1EF86AFB001032BF /* ao-logo.png */,
 				B47EF2821EF2B1B000270F23 /* Model */,
 				B47EF28E1EF2B1E400270F23 /* ModelTests */,
 				B47EF2721EF2B18A00270F23 /* Products */,
