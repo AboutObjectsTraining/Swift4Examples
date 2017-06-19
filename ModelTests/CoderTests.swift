@@ -14,42 +14,13 @@ private let encoder: JSONEncoder = {
     return encoder
 }()
 
-private let book1Json = """
-{
-"title": "Title One",
-"year": 2017,
-"favorite": true,
-"rating": { "average": 4.5, "count": 23 }
-}
-"""
-private let book2Json = """
-{
-"title": "Title Two",
-"year": 2016,
-"favorite": false,
-"rating": { "average": 5, "count": 12 }
-}
-"""
-
-private let authorJson = """
-{
-"firstName": "FNameOne",
-"lastName": "LNameOne"
-}
-"""
-
-private let authorAndBooksJson = """
-{
-"firstName": "FNameTwo",
-"lastName": "LNameTwo",
-"books": [\(book1Json), \(book2Json)]
-}
-"""
-
 class CoderTests: XCTestCase {
     override func setUp() { super.setUp(); print() }
     override func tearDown() { print(); super.tearDown() }
-    
+}
+
+// MARK: - Coding Basics
+extension CoderTests {
     func testEncodeAndDecodeBook() throws {
         let data = try encoder.encode(book1)
         print(String(data: data, encoding: .utf8) ?? "null")
@@ -59,7 +30,7 @@ class CoderTests: XCTestCase {
     }
     
     func testEncodeAndDecodeAuthor() throws {
-        let data = try encoder.encode(author)
+        let data = try encoder.encode(author1)
         print(String(data: data, encoding: .utf8) ?? "null")
         
         let newAuthor = try decoder.decode(Author.self, from: data)
@@ -90,7 +61,6 @@ class CoderTests: XCTestCase {
         print(newAuthor)
     }
     
-    
     var authorUrl: URL {
         var url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         url.appendPathComponent("Authors")
@@ -99,7 +69,7 @@ class CoderTests: XCTestCase {
     }
     
     func testStoreAuthorAndNestedBook() throws {
-        let authorData = try encoder.encode(author)
+        let authorData = try encoder.encode(author1)
         print(String(data: authorData, encoding: .utf8)!)
         
         do {
@@ -114,29 +84,9 @@ class CoderTests: XCTestCase {
         let fetchedAuthor = try decoder.decode(Author.self, from: fetchedData)
         print(fetchedAuthor)
     }
-}
+} 
 
-// MARK: - Custom Coding
-
-private let iTunesEbookJson = """
-{
-"fileSizeBytes":5990135,
-"currency":"USD",
-"artistId":2122513,
-"artistName":"Ernest Hemingway",
-"genres":["Classics", "Books", "Fiction & Literature", "Literary"],
-"kind":"ebook",
-"price":9.99,
-"description":"One of the enduring works of American fiction.",
-"trackName":"The Old Man and the Sea",
-"trackId":381645838,
-"formattedPrice":"$9.99",
-"releaseDate":"2002-07-25T07:00:00Z",
-"averageUserRating":4.5,
-"userRatingCount":660
-}
-"""
-
+// MARK: Working with Files
 extension CoderTests {
     func testCustomDecodeFromJsonText() throws {
         let data = iTunesEbookJson.data(using: .utf8) ?? Data()
@@ -147,7 +97,7 @@ extension CoderTests {
     }
     
     func testCustomEncodeEbook() throws {
-        let data = try encoder.encode(ebook)
+        let data = try encoder.encode(ebook1)
         print(String(data: data, encoding: .utf8) ?? "null")
     }
     
@@ -162,4 +112,19 @@ extension CoderTests {
         print(newEbook)
     }
 }
+
+// MARK: User Info
+extension CoderTests {
+    func testEncodePerson() throws {
+        let person = Person(name: "Fred", dateOfBirth: Date(), friends: [], rating: Rating(average: 4.5, count: 3))
+        let myEncoder = JSONEncoder()
+        myEncoder.outputFormatting = .prettyPrinted
+        myEncoder.userInfo[Person.userInfoKey] = Person.Context(encodeFriends: false, encodeRating: true)
+        
+        let data = try myEncoder.encode(person)
+        print(String(data: data, encoding: .utf8)!)
+    }
+}
+
+// TODO: Encode/decode Swift enums
 
