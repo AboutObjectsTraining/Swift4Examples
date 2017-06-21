@@ -12,6 +12,11 @@ let book2 = Book(title: "Book Two", year: 2001, favorite: true, rating: Rating(a
 let author1 = Author(firstName: "Fred", lastName: "Smith", books: [book1, book2])
 
 let ebook1 = Ebook(ebookId: 123456, title: "Ebook One", rating: Rating(average: 2.75, count: 42))
+let ebook2: Ebook = {
+    var ebook = Ebook(ebookId: 56789, title: "Ebook Two", rating: Rating(average: 3.75, count: 11));
+    ebook.currency = Ebook.Currency.euro
+    return ebook
+}()
 
 let book1Json = """
 {

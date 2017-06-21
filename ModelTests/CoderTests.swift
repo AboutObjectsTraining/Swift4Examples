@@ -36,7 +36,10 @@ extension CoderTests {
         let newAuthor = try decoder.decode(Author.self, from: data)
         print(newAuthor)
     }
-    
+}
+
+// MARK: - Working with JSON
+extension CoderTests {
     func testDecodeBookFromJsonText() throws {
         let data = book1Json.data(using: .utf8) ?? Data()
         print(String(data: data, encoding: .utf8) ?? "null")
@@ -61,11 +64,23 @@ extension CoderTests {
         print(newAuthor)
     }
     
+}
+
+// MARK: Working with Files
+extension CoderTests {
     var authorUrl: URL {
         var url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         url.appendPathComponent("Authors")
         url.appendPathExtension("json")
         return url
+    }
+    
+    func testCustomDecodeFromJsonText() throws {
+        let data = iTunesEbookJson.data(using: .utf8) ?? Data()
+        print(String(data: data, encoding: .utf8) ?? "null")
+        
+        let newEbook = try decoder.decode(Ebook.self, from: data)
+        print(newEbook)
     }
     
     func testStoreAuthorAndNestedBook() throws {
@@ -75,29 +90,17 @@ extension CoderTests {
         do {
             try authorData.write(to: authorUrl)
         }
-        catch let e {
-            print(e)
-            XCTFail()
+        catch {
+            print(error); XCTFail()
         }
         
         let fetchedData = try Data(contentsOf: authorUrl, options: [])
         let fetchedAuthor = try decoder.decode(Author.self, from: fetchedData)
         print(fetchedAuthor)
     }
-} 
-
-// MARK: Working with Files
-extension CoderTests {
-    func testCustomDecodeFromJsonText() throws {
-        let data = iTunesEbookJson.data(using: .utf8) ?? Data()
-        print(String(data: data, encoding: .utf8) ?? "null")
-        
-        let newEbook = try decoder.decode(Ebook.self, from: data)
-        print(newEbook)
-    }
     
     func testCustomEncodeEbook() throws {
-        let data = try encoder.encode(ebook1)
+        let data = try encoder.encode(ebook2)
         print(String(data: data, encoding: .utf8) ?? "null")
     }
     
@@ -113,16 +116,29 @@ extension CoderTests {
     }
 }
 
-// MARK: User Info
+// MARK: Accessing User Info
 extension CoderTests {
+    
+    var birthDate: Date {
+        var dateComponents = DateComponents()
+        dateComponents.year = 1980
+        dateComponents.month = 7
+        dateComponents.day = 11
+        return Calendar.current.date(from: dateComponents)!
+    }
+    
     func testEncodePerson() throws {
-        let person = Person(name: "Fred", dateOfBirth: Date(), friends: [], rating: Rating(average: 4.5, count: 3))
+        
+        let person = Person(name: "Fred", dateOfBirth: birthDate, friends: [], rating: Rating(average: 4.5, count: 3))
         let myEncoder = JSONEncoder()
         myEncoder.outputFormatting = .prettyPrinted
         myEncoder.userInfo[Person.userInfoKey] = Person.Context(encodeFriends: false, encodeRating: true)
         
         let data = try myEncoder.encode(person)
         print(String(data: data, encoding: .utf8)!)
+        
+        let clonedPerson = try? decoder.decode(Person.self, from: data)
+        print(clonedPerson!)
     }
 }
 
