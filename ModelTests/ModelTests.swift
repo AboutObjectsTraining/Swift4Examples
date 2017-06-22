@@ -53,12 +53,12 @@ let authorAndBooksJson = """
 let iTunesEbookJson = """
 {
 "fileSizeBytes":5990135,
-"currency":"USD",
 "artistId":2122513,
 "artistName":"Ernest Hemingway",
 "genres":["Classics", "Books", "Fiction & Literature", "Literary"],
 "kind":"ebook",
 "price":9.99,
+"currency":"USD",
 "description":"One of the enduring works of American fiction.",
 "trackName":"The Old Man and the Sea",
 "trackId":381645838,
@@ -69,6 +69,24 @@ let iTunesEbookJson = """
 }
 """
 
+let iTunesEbookJson2 = """
+{
+"fileSizeBytes":5990135,
+"artistId":2122513,
+"artistName":"Ernest Hemingway",
+"genres":["Classics", "Books", "Fiction & Literature", "Literary"],
+"kind":"ebook",
+"price":9.99,
+"currency": "GBP",
+"description":"One of the enduring works of American fiction.",
+"trackName":"The Old Man and the Sea",
+"trackId":381645838,
+"formattedPrice":"$9.99",
+"releaseDate":"2002-07-25T07:00:00Z",
+"averageUserRating":4.5,
+"userRatingCount":660
+}
+"""
 let personText = """
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">

@@ -66,6 +66,33 @@ extension CoderTests {
     
 }
 
+// MARK: Manual Coding and Enums
+extension CoderTests {
+    func testManuallyDecodeFromJsonText() throws {
+        let data = iTunesEbookJson.data(using: .utf8) ?? Data()
+        print(String(data: data, encoding: .utf8) ?? "null")
+        
+        let newEbook = try decoder.decode(Ebook.self, from: data)
+        print(newEbook)
+    }
+    
+    func testManuallyEncodeEbook() throws {
+        let data = try encoder.encode(ebook2)
+        print(String(data: data, encoding: .utf8) ?? "null")
+    }
+    
+    func testManuallyDecodeAndEncodeFromJsonTextWithAssociatedEnumValue() throws {
+        let data = iTunesEbookJson2.data(using: .utf8) ?? Data()
+        print(String(data: data, encoding: .utf8) ?? "null")
+        
+        let newEbook = try decoder.decode(Ebook2.self, from: data)
+        print(newEbook)
+        
+        let clonedData = try encoder.encode(newEbook)
+        print(String(data: clonedData, encoding: .utf8)!)
+    }
+}
+
 // MARK: Working with Files
 extension CoderTests {
     var authorUrl: URL {
@@ -73,14 +100,6 @@ extension CoderTests {
         url.appendPathComponent("Authors")
         url.appendPathExtension("json")
         return url
-    }
-    
-    func testCustomDecodeFromJsonText() throws {
-        let data = iTunesEbookJson.data(using: .utf8) ?? Data()
-        print(String(data: data, encoding: .utf8) ?? "null")
-        
-        let newEbook = try decoder.decode(Ebook.self, from: data)
-        print(newEbook)
     }
     
     func testStoreAuthorAndNestedBook() throws {
@@ -99,11 +118,6 @@ extension CoderTests {
         print(fetchedAuthor)
     }
     
-    func testCustomEncodeEbook() throws {
-        let data = try encoder.encode(ebook2)
-        print(String(data: data, encoding: .utf8) ?? "null")
-    }
-    
     func testDecodeEbookFromJsonFile() throws {
         let bundle = Bundle(for: type(of: self))
         guard let url = bundle.url(forResource: "ebook", withExtension: "json") else {
@@ -116,7 +130,7 @@ extension CoderTests {
     }
 }
 
-// MARK: Accessing User Info
+// MARK: Working with User Info
 extension CoderTests {
     
     var birthDate: Date {
@@ -141,6 +155,3 @@ extension CoderTests {
         print(clonedPerson!)
     }
 }
-
-// TODO: Encode/decode Swift enums
-
