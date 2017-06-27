@@ -47,6 +47,7 @@
 		B4AA5B931EF2B26D002B70A5 /* Rating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
 		B4AA5B971EF2B28B002B70A5 /* CoderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoderTests.swift; sourceTree = "<group>"; };
 		B4AA5B991EF2B28B002B70A5 /* KVCTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVCTests.swift; sourceTree = "<group>"; };
+		B4B947021F0286F400F98DA6 /* Coding.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Coding.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		B4C30F8F1EF2ED7000F852B4 /* ebook.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ebook.json; sourceTree = "<group>"; };
 		B4C30F911EF2EE7F00F852B4 /* Ebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ebook.swift; sourceTree = "<group>"; };
 		B4C573761EF7F70400E4EBD8 /* DictionaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryTests.swift; sourceTree = "<group>"; };
@@ -77,6 +78,7 @@
 		B47EF2671EF2B18A00270F23 = {
 			isa = PBXGroup;
 			children = (
+				B4B947021F0286F400F98DA6 /* Coding.playground */,
 				B4EBC8EE1EF2C373004725A8 /* LICENSE */,
 				B4EBC8ED1EF2C141004725A8 /* README.md */,
 				B40F942A1EF86AFB001032BF /* ao-logo.png */,

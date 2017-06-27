@@ -66,7 +66,7 @@ extension CoderTests {
     
 }
 
-// MARK: Manual Coding and Enums
+// MARK: - Manual Coding and Enums
 extension CoderTests {
     func testManuallyDecodeFromJsonText() throws {
         let data = iTunesEbookJson.data(using: .utf8) ?? Data()
@@ -93,7 +93,7 @@ extension CoderTests {
     }
 }
 
-// MARK: Working with Files
+// MARK: - Working with Files
 extension CoderTests {
     var authorUrl: URL {
         var url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -130,7 +130,7 @@ extension CoderTests {
     }
 }
 
-// MARK: Working with User Info
+// MARK: - Working with User Info
 extension CoderTests {
     
     var birthDate: Date {
