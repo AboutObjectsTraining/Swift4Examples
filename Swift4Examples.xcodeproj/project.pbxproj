@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB0BD8621F5B3AB600C869C3 /* CaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BD8611F5B3AB600C869C3 /* CaseTests.swift */; };
+		AB70AC4D1F5B344300910278 /* Garment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB70AC4C1F5B344300910278 /* Garment.swift */; };
 		B47EF2851EF2B1B000270F23 /* Model.h in Headers */ = {isa = PBXBuildFile; fileRef = B47EF2831EF2B1B000270F23 /* Model.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B47EF2901EF2B1E400270F23 /* ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47EF28F1EF2B1E400270F23 /* ModelTests.swift */; };
 		B47EF2921EF2B1E400270F23 /* Model.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B47EF2811EF2B1B000270F23 /* Model.framework */; };
@@ -34,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB0BD8611F5B3AB600C869C3 /* CaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseTests.swift; sourceTree = "<group>"; };
+		AB70AC4C1F5B344300910278 /* Garment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Garment.swift; sourceTree = "<group>"; };
+		AB70AC4E1F5B353000910278 /* EnumsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumsTests.swift; sourceTree = "<group>"; };
 		B40F942A1EF86AFB001032BF /* ao-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ao-logo.png"; sourceTree = "<group>"; };
 		B47EF2811EF2B1B000270F23 /* Model.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Model.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B47EF2831EF2B1B000270F23 /* Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
@@ -106,6 +111,7 @@
 				B4AA5B931EF2B26D002B70A5 /* Rating.swift */,
 				B4C30F911EF2EE7F00F852B4 /* Ebook.swift */,
 				B49803BE1EF85B620065C42D /* Person.swift */,
+				AB70AC4C1F5B344300910278 /* Garment.swift */,
 				B47EF2841EF2B1B000270F23 /* Info.plist */,
 			);
 			path = Model;
@@ -120,6 +126,8 @@
 				B4AA5B991EF2B28B002B70A5 /* KVCTests.swift */,
 				B4C573761EF7F70400E4EBD8 /* DictionaryTests.swift */,
 				B4C573781EF81EB000E4EBD8 /* StringTests.swift */,
+				AB70AC4E1F5B353000910278 /* EnumsTests.swift */,
+				AB0BD8611F5B3AB600C869C3 /* CaseTests.swift */,
 				B47EF2911EF2B1E400270F23 /* Info.plist */,
 			);
 			path = ModelTests;
@@ -239,6 +247,7 @@
 			files = (
 				B49803BF1EF85B620065C42D /* Person.swift in Sources */,
 				B4AA5B961EF2B26D002B70A5 /* Rating.swift in Sources */,
+				AB70AC4D1F5B344300910278 /* Garment.swift in Sources */,
 				B4AA5B951EF2B26D002B70A5 /* Book.swift in Sources */,
 				B4C30F921EF2EE7F00F852B4 /* Ebook.swift in Sources */,
 				B4AA5B941EF2B26D002B70A5 /* Author.swift in Sources */,
@@ -254,6 +263,7 @@
 				B4C573771EF7F70400E4EBD8 /* DictionaryTests.swift in Sources */,
 				B47EF2901EF2B1E400270F23 /* ModelTests.swift in Sources */,
 				B4AA5B9A1EF2B28B002B70A5 /* CoderTests.swift in Sources */,
+				AB0BD8621F5B3AB600C869C3 /* CaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

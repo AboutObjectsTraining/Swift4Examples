@@ -14,13 +14,12 @@ class StringTests: XCTestCase {
         print(s.count)
         print(s.contains("World"))
         
-        print(s.substring(to: s.index(of: " ")!))
-        print(s.substring(with: s.index(of: "W")!..<s.index(of: "!")!))
-        
+        print(s[..<s.index(of: " ")!])
+        print(s[s.index(of: "W")!..<s.index(of: "!")!])
         print(s.suffix(from: s.index(of: "W")!))
     }
     
     func testPlist() {
-        print(personText.propertyList())
+        print(personInfoString.propertyList())
     }
 }
