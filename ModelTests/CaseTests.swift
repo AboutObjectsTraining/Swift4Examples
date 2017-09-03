@@ -39,6 +39,9 @@ class CaseTests: XCTestCase {
     }
     
     func testAssociatedValues() {
+        let item = Apparel.shirt(size: .extraLarge)
+        if case let .shirt(size) = item { print(size) }
+        
         let garment = Garment.shirt(size: "L")
         if case let .shirt(size) = garment { print(size) }
         
