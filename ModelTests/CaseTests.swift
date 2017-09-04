@@ -22,7 +22,14 @@ enum Apparel {
 class CaseTests: XCTestCase {
     override func setUp() { super.setUp(); print() }
     override func tearDown() { print(); super.tearDown() }
- 
+
+    func testIfCase() {
+        let tie = Apparel.tie
+        if case Apparel.tie = tie {
+            print("Yup, a tie")
+        }
+    }
+    
     func testNestedEnum() {
         let shirt = Apparel.shirt(size: .small)
         print(shirt)
