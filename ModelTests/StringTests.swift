@@ -39,8 +39,10 @@ class StringTests: XCTestCase {
         print(s[..<s.leadingIndex(of: " ")])
         print(s[s.leadingIndex(of: "W")...s.trailingIndex(of: "!")])
         
-//        print(s.substring(to: s.index(of: " ")!))
-//        print(s.substring(with: s.index(of: "W")!..<s.index(of: "!")!))
+        // Swift 3 implementation
+        //
+        // print(s.substring(to: s.index(of: " ")!))
+        // print(s.substring(with: s.index(of: "W")!..<s.index(of: "!")!))
         
         print(s.prefix(upTo: indexOfSpace))
         print(s.suffix(from: indexOfW))
@@ -50,6 +52,6 @@ class StringTests: XCTestCase {
     }
     
     func testPlist() {
-        print(personText.propertyList())
+        print(personInfoString.propertyList())
     }
 }
