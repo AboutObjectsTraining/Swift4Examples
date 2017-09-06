@@ -5,30 +5,30 @@
 
 import Foundation
 
-enum Garment {
+public enum Garment {
     case tie
     case shirt(size: String)
     case pants(waist: Int, inseam: Int)
 }
 
 extension Garment: CustomStringConvertible {
-    var description: String {
+    public var description: String {
         switch self {
         case .tie:             return "tie"
         case let .shirt(s):    return "shirt: \(s)"
-        case let .pants(w, i): return "pants: \(w)X\(i)"
+        case let .pants(w, i): return "pants: \(w) X \(i)"
         }
     }
 }
 
 extension Garment: Equatable {
-    static func ==(lhs: Garment, rhs: Garment) -> Bool {
+    public static func ==(lhs: Garment, rhs: Garment) -> Bool {
         switch (lhs, rhs) {
         case (.tie, .tie): return true
-        case let (.shirt(size1), .shirt(size2)):
-            return size1 == size2
-        case let (.pants(waist1, inseam1), .pants(waist2, inseam2)):
-            return waist1 == waist2 && inseam1 == inseam2
+        case let (.shirt(s1), .shirt(s2)):
+            return s1 == s2
+        case let (.pants(w1, i1), .pants(w2, i2)):
+            return w1 == w2 && i1 == i2
         default: return false
         }
     }

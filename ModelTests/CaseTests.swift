@@ -7,18 +7,6 @@ import XCTest
 
 private let number = 42
 
-enum Apparel {
-    enum Size: String, CustomStringConvertible {
-        case small = "SM", medium = "M", large = "L", extraLarge = "XL"
-        var description: String {
-            return rawValue
-        }
-    }
-    case tie
-    case shirt(size: Size)
-    case jacket(size: Size)
-}
-
 class CaseTests: XCTestCase {
     override func setUp() { super.setUp(); print() }
     override func tearDown() { print(); super.tearDown() }
@@ -42,6 +30,15 @@ class CaseTests: XCTestCase {
         case 3: print("3")
         case 4...: print("greater than 3")
         default: print("")
+        }
+        
+        if case ..<3 = number {
+            print("Number less than 3")
+        }
+        
+        let greeting = "Hello"
+        if case "Foo" = greeting {
+            print("Foo")
         }
     }
     

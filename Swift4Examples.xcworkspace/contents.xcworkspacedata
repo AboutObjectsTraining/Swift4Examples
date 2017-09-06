@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:Model.playground">
+   </FileRef>
+   <FileRef
+      location = "group:Coding.playground">
+   </FileRef>
+   <FileRef
+      location = "group:Enumerations.playground">
+   </FileRef>
+   <FileRef
+      location = "container:Swift4Examples.xcodeproj">
+   </FileRef>
+</Workspace>
