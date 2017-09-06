@@ -57,6 +57,7 @@
 		B4C30F911EF2EE7F00F852B4 /* Ebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ebook.swift; sourceTree = "<group>"; };
 		B4C573761EF7F70400E4EBD8 /* DictionaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryTests.swift; sourceTree = "<group>"; };
 		B4C573781EF81EB000E4EBD8 /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
+		B4E887191F5EF88900DEBE8B /* Enumerations.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Enumerations.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		B4EBC8ED1EF2C141004725A8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B4EBC8EE1EF2C373004725A8 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +84,7 @@
 		B47EF2671EF2B18A00270F23 = {
 			isa = PBXGroup;
 			children = (
+				B4E887191F5EF88900DEBE8B /* Enumerations.playground */,
 				B4B947021F0286F400F98DA6 /* Coding.playground */,
 				B4EBC8EE1EF2C373004725A8 /* LICENSE */,
 				B4EBC8ED1EF2C141004725A8 /* README.md */,
