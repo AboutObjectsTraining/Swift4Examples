@@ -19,6 +19,7 @@
 		B4AA5B961EF2B26D002B70A5 /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AA5B931EF2B26D002B70A5 /* Rating.swift */; };
 		B4AA5B9A1EF2B28B002B70A5 /* CoderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AA5B971EF2B28B002B70A5 /* CoderTests.swift */; };
 		B4AA5B9C1EF2B28B002B70A5 /* KVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AA5B991EF2B28B002B70A5 /* KVCTests.swift */; };
+		B4B621071F620842004D8B29 /* EnumsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB70AC4E1F5B353000910278 /* EnumsTests.swift */; };
 		B4C30F901EF2ED7000F852B4 /* ebook.json in Resources */ = {isa = PBXBuildFile; fileRef = B4C30F8F1EF2ED7000F852B4 /* ebook.json */; };
 		B4C30F921EF2EE7F00F852B4 /* Ebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C30F911EF2EE7F00F852B4 /* Ebook.swift */; };
 		B4C573751EF42A3A00E4EBD8 /* ebook.json in Resources */ = {isa = PBXBuildFile; fileRef = B4C30F8F1EF2ED7000F852B4 /* ebook.json */; };
@@ -260,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4B621071F620842004D8B29 /* EnumsTests.swift in Sources */,
 				B4AA5B9C1EF2B28B002B70A5 /* KVCTests.swift in Sources */,
 				B4C573791EF81EB000E4EBD8 /* StringTests.swift in Sources */,
 				B4C573771EF7F70400E4EBD8 /* DictionaryTests.swift in Sources */,
