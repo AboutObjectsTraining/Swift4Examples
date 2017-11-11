@@ -92,9 +92,9 @@ let personInfoString = """
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-<key>Name</key>
+<key>name</key>
 <string>John Doe</string>
-<key>Phones</key>
+<key>phones</key>
 <array>
 <string>408-974-0000</string>
 <string>503-333-5555</string>

@@ -24,6 +24,12 @@ class StringTests: XCTestCase {
     override func setUp() { super.setUp(); print() }
     override func tearDown() { print(); super.tearDown() }
     
+    
+    func testExtendedGraphemeCluster() {
+        let usFlag: Character = "\u{1F1FA}\u{1F1F8}"
+        print(usFlag)
+    }
+    
     func testStringBasics() {
         let s = "Hello World!"
         print(s.count)
@@ -53,5 +59,12 @@ class StringTests: XCTestCase {
     
     func testPlist() {
         print(personInfoString.propertyList())
+        
+        guard let personInfo = personInfoString.propertyList() as? [String: Any] else { fatalError() }
+        let name = personInfo["name"] ?? ""
+        print(name)
+        
+        guard let phones = personInfo["phones"] as? [String] else { fatalError() }
+        phones.forEach { print($0) }
     }
 }
